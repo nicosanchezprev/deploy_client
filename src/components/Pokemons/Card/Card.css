@@ -1,0 +1,166 @@
+@media screen and (min-width: 320px) {
+  .div-card{
+    background-color: white;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 16%);
+    border: 0;
+    border-radius: 18px;
+    margin: 10px 10px;
+    outline: none;
+    text-decoration: none;
+    width: 110px;
+    height: 160px;
+    padding: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.2s;
+  }
+  .div-card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  }
+  
+  .titulo-card{
+    color: #535353;
+    font-family: "Rubik",sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .img-card{
+    width: 80px;
+    height: 80px;
+  }
+  
+  .div-tipos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nombre-tipo{
+    display: flex;
+    justify-content: center;
+    margin: 14px 5px 5px 5px;
+    border-radius: 18px;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    width: 40px;
+  }
+  .link-card{
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* COLORES DEPENDIENDO DEL TIPO */
+  .normal {
+    background-color: #a4acaf;
+  }
+  .fighting{
+    background-color: #d56723;
+  }
+  .flying{
+    background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+    background-color: #3dc7ef;
+  }
+  .poison{
+    background-color: #b97fc9;
+  }
+  .ground{
+    background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+    background-color: #f7de3f;
+    color: #212121;
+  }
+  .rock{
+    background-color: #a38c21;
+  }
+  .bug{
+    background-color: #729f3f;
+  }
+  .ghost{
+    background-color: #7b62a3;
+  }
+  .steel{
+    background-color: #9eb7b8;
+    color: #212121;
+  }
+  .fire{
+    background-color: #fd7d24;
+  }
+  .water{
+    background-color: #4592c4;
+  }
+  .grass{
+    background-color: #9bcc50;
+    color: #212121;
+  }
+  .electric{
+    background-color: #eed535;
+    color: #212121;
+  }
+  .psychic{
+    background-color: #f366b9;
+  }
+  .ice{
+    background-color: #51c4e7;
+    color: #212121;
+  }
+  .dragon{
+    background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+    background-color: #53a4cf;
+  }
+  .dark{
+    background-color: #707070;
+  }
+  .fairy{
+    background-color: #fdb9e9;
+  }
+  .unknown{
+    background-color: #4a8b09;
+  }
+  .shadow{
+    background-color: #141414;
+  }
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1024px) {
+  .div-card{
+    width: 280px;
+    height: 300px;
+  }
+  .div-card:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  }
+  
+  .titulo-card{
+    font-size: 26px;
+  }
+  
+  .img-card{
+    width: 200px;
+    height: 200px;
+  }
+  
+  .nombre-tipo{
+    margin: 5px 5px;
+    padding: 8px;
+    font-size: 18px;
+    width: 70px;
+  }
+  .link-card{
+    outline: none;
+    text-decoration: none;
+    color: black;
+  }
+  
+}
+

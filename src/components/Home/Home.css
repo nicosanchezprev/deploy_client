@@ -1,0 +1,149 @@
+@media screen and (min-width: 320px) {
+  .div-principal-home{
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 16px;
+    width: 100%; 
+  }
+  
+  .div-secundario1-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+  
+  .logo-home{
+    width: 100px;
+  }
+  
+  .titulo-home{
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    color: #242424;
+    margin: 25px 0px 20px 0px;
+    align-self: center;
+  }
+  .div-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 80%;
+  }
+  .texto-home{
+    font-size: 12px;
+    font-family: 'Alfa Slab One', cursive;
+    color: #888888;
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+  }
+  
+  .boton-home{
+    width: fit-content;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-family: 'Alfa Slab One', cursive;
+    background-color: #eb544d;
+    border: 2px solid #eb544d;
+    border-radius: 22px;
+    padding: 12px;
+    margin-top: 30px;
+    transition: all ease-in-out 0.2s;
+  }
+  .boton-home:hover {
+    scale: 1.1;
+    background-color: #e4362d;
+    border: 2px solid #e4362d;
+  }
+  
+  .link-home {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .div-secundario2-home {
+    background-color: #eb544d;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: #c7c7c7 solid 6px;
+    border-top: none;
+    border-bottom: none;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gif-home {
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logo-home{
+    width: 220px;
+  }
+  .titulo-home{
+    font-size: 40px;
+  }
+  .texto-home{
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .div-principal-home{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .logo-home{
+    margin: 0px 0px 0px 0px;
+    width: 250px;
+  }
+  
+
+  .titulo-home{
+    font-size: 40px;
+    margin: 60px 0px 40px 0px;
+    align-self: center;
+  }
+  
+  .texto-home{
+    font-size: 18px;
+  }
+  
+  .boton-home{
+    font-size: 24px;
+    padding: 16px;
+    margin-top: 50px;
+  }
+  
+  .div-secundario2-home {
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border: #c7c7c7 solid 22px;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    height: 100vh;
+    width: 93vh;
+  }
+  .gif-home{
+    margin-right: 100px;
+    max-width: 500px;
+  }
+}
+
+

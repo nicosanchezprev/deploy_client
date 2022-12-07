@@ -1,0 +1,51 @@
+.paginado{
+  align-self: flex-end;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  column-gap: 20px;
+  row-gap: 50px;
+  list-style: none;
+  padding: 20px;
+  height: fit-content;
+}
+
+
+.paginado-a{
+  font-family: "Rubik",sans-serif;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  background-color: transparent;
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #474747;
+}
+.paginado-a:hover{
+  background-color: #eb4037;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.selecPage{
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  background-color: transparent;
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #eb4037;
+  color: white;
+}
+
+
