@@ -68,6 +68,13 @@ const Pokemons = (props) => {
         <Error error={error}/>
       </>
     )
+  } else if(loading) {
+    return (
+      <div className="div-loader-gif-pokemons">
+        <img className="loader-gif-pokemons1" src={loader} alt="loader" />
+        <img className="loader-gif-pokemons2" src={loaderDots} alt="loader" />
+      </div>
+    )
   } else if(allPokes.length) {
     return(
       <div className="div-principal-pokemons">
@@ -141,13 +148,6 @@ const Pokemons = (props) => {
           paginado={paginado}
           currentPage={currentPage}
         />
-      </div>
-    )
-  } else if(loading) {
-    return (
-      <div className="div-loader-gif-pokemons">
-        <img className="loader-gif-pokemons1" src={loader} alt="loader" />
-        <img className="loader-gif-pokemons2" src={loaderDots} alt="loader" />
       </div>
     )
   } else {
