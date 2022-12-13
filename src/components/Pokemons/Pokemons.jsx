@@ -32,7 +32,7 @@ const Pokemons = (props) => {
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons =  allPokes.slice(indexOfFirstPokemon, indexOfLastPokemon);
   const [orden, setOrden] = useState("");
-
+  const [loading, setLoading] = useState(false);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -41,7 +41,8 @@ const Pokemons = (props) => {
   // Fin Paginado
   
   useEffect(() => {
-    dispatch(getPokemons());
+    setLoading(true);
+    dispatch(getPokemons()).then(setLoading(false));
     return dispatch(cleanPokemons());
   }, [dispatch]);
 
@@ -142,13 +143,64 @@ const Pokemons = (props) => {
         />
       </div>
     )
-  } else {
+  } else if(loading) {
     return (
       <div className="div-loader-gif-pokemons">
         <img className="loader-gif-pokemons1" src={loader} alt="loader" />
         <img className="loader-gif-pokemons2" src={loaderDots} alt="loader" />
       </div>
     )
+  } else {
+    <div className="div-principal-pokemons">
+        <Nav setCurrentPage={setCurrentPage} />
+        <div className="div-secundario-filter">
+          <div className="div-children-filter">
+            <div className="title-filter">Ordenar</div>
+            <select className="boton-filter" onChange={e => handleSort(e)}>
+              <option value="default">Ordenar</option>
+              <option value="asc">A-Z</option>
+              <option value="desc">Z-A</option>
+              <option value="pod">Poderosos</option>
+              <option value="deb">Debiles</option>
+            </select>
+          </div>
+            <div className="div-children-filter"> 
+              <div className="title-filter">Procedencia</div>
+              <select className="boton-filter" onChange={e => handleFilterCreated(e)}>
+                <option value="all">Todos</option>
+                <option value="existentes">Existentes</option>
+                <option value="created">Creados</option>
+              </select>
+            </div>
+            <div className="div-children-filter">
+              <div className="title-filter">Tipos</div>
+              <select className="boton-filter" onChange={e => handleFilterStatus(e)}>
+                <option value="all">Todos</option>
+                <option value="normal">Normal</option>
+                <option value="fighting">Peleador</option>
+                <option value="flying">Volador</option>
+                <option value="poison">Veneno</option>
+                <option value="ground">Tierra</option>
+                <option value="rock">Piedra</option>
+                <option value="bug">Bicho</option>
+                <option value="ghost">Fanstama</option>
+                <option value="steel">Acero</option>
+                <option value="fire">Fuego</option>
+                <option value="water">Agua</option>
+                <option value="grass">Planta</option>
+                <option value="electric">Electrico</option>
+                <option value="psychic">Psiquico</option>
+                <option value="ice">Hielo</option>
+                <option value="dragon">Dragon</option>
+                <option value="dark">Siniestro</option>
+                <option value="fairy">Hada</option>
+                <option value="unknown">???</option>
+                <option value="shadow">Oscuro</option>
+              </select>
+            </div>
+          </div>
+      <h1>NO HAY POKEMONS</h1>
+    </div>
   }
 };
 
