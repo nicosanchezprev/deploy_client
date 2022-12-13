@@ -151,7 +151,8 @@ const Pokemons = (props) => {
       </div>
     )
   } else {
-    <div className="div-principal-pokemons">
+    return (
+      <div className="div-principal-pokemons">
         <Nav setCurrentPage={setCurrentPage} />
         <div className="div-secundario-filter">
           <div className="div-children-filter">
@@ -199,8 +200,9 @@ const Pokemons = (props) => {
               </select>
             </div>
           </div>
-      <h1>NO HAY POKEMONS</h1>
-    </div>
+        <h1>NO HAY POKEMONS</h1>
+      </div>
+    )
   }
 };
 
