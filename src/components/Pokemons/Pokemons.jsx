@@ -42,7 +42,8 @@ const Pokemons = (props) => {
   
   useEffect(() => {
     setLoading(true);
-    dispatch(getPokemons()).then(setLoading(false));
+    dispatch(getPokemons())
+    setLoading(false);
     return dispatch(cleanPokemons());
   }, [dispatch]);
 
@@ -68,7 +69,7 @@ const Pokemons = (props) => {
         <Error error={error}/>
       </>
     )
-  } else if(loading) {
+  } else if(loading === true) {
     return (
       <div className="div-loader-gif-pokemons">
         <img className="loader-gif-pokemons1" src={loader} alt="loader" />
@@ -150,7 +151,7 @@ const Pokemons = (props) => {
         />
       </div>
     )
-  } else {
+  } else if (loading === false && !allPokes.length) {
     return (
       <div className="div-principal-pokemons">
         <Nav setCurrentPage={setCurrentPage} />
