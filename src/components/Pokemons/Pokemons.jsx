@@ -32,7 +32,7 @@ const Pokemons = (props) => {
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons =  allPokes.slice(indexOfFirstPokemon, indexOfLastPokemon);
   const [orden, setOrden] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(0);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -41,9 +41,9 @@ const Pokemons = (props) => {
   // Fin Paginado
   
   useEffect(() => {
-    setLoading(true);
-    dispatch(getPokemons())
-    setLoading(false);
+    setLoading(1);
+    dispatch(getPokemons());
+    setLoading(0);
     return dispatch(cleanPokemons());
   }, [dispatch]);
 
@@ -69,7 +69,7 @@ const Pokemons = (props) => {
         <Error error={error}/>
       </>
     )
-  } else if(loading === true) {
+  } else if(loading === 1) {
     return (
       <div className="div-loader-gif-pokemons">
         <img className="loader-gif-pokemons1" src={loader} alt="loader" />
@@ -151,7 +151,7 @@ const Pokemons = (props) => {
         />
       </div>
     )
-  } else if (loading === false && !allPokes.length) {
+  } else if (loading === 0 && !allPokes.length) {
     return (
       <div className="div-principal-pokemons">
         <Nav setCurrentPage={setCurrentPage} />
