@@ -26,7 +26,9 @@ export const setError = (payload) => {
 export const getTypes = () => {
   return async function(dispatch) {
     try {
-      await axios.get("http://localhost:3001/types")
+      await axios.get("https://deployserver-production.up.railway.app/types", {headers: {
+        "accept-encoding": "*",
+      }})
     .then((info) => dispatch({ type: GET_TYPES, payload: info.data }));
     } catch (error){
       console.log(error);
@@ -37,7 +39,9 @@ export const getTypes = () => {
 export const getPokemons = () => {
   return async function(dispatch) {
     try {
-      var json = await axios.get("http://localhost:3001/pokemons");
+      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons", {headers: {
+        "accept-encoding": "*",
+      }});
       dispatch({ type: GET_POKEMONS, payload: json.data });
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -48,7 +52,9 @@ export const getPokemons = () => {
 export const getNamePokemons = (name) => {
   return async function(dispatch) {
     try {
-      var json = await axios.get("http://localhost:3001/pokemons?name=" + name.toLowerCase());
+      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons?name=" + name.toLowerCase(), {headers: {
+        "accept-encoding": "*",
+      }});
       return dispatch({ type: GET_NAME_POKEMONS, payload: json.data});
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -59,7 +65,9 @@ export const getNamePokemons = (name) => {
 export const getPokemonDetail = (id) => {
   return async function (dispatch) {
     try {
-      await axios.get(`http://localhost:3001/pokemons/${id}`)
+      await axios.get(`https://deployserver-production.up.railway.app/pokemons/${id}`, {headers: {
+        "accept-encoding": "*",
+      }})
       .then((info) => dispatch({ type: GET_POKEMON_DETAIL, payload: info.data }));
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -70,7 +78,7 @@ export const getPokemonDetail = (id) => {
 export const createPokemon = (payload) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post("http://localhost:3001/pokemons", payload);
+      const response = await axios.post("https://deployserver-production.up.railway.app/pokemons", payload);
       return response;
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -94,7 +102,7 @@ export const cleanStyles = () => {
 export const deletePokemon = (pokemonId) => {
   return async function (dispatch) {
     try {
-      await axios.delete(`http://localhost:3001/pokemons/delete/${pokemonId}`);
+      await axios.delete(`https://deployserver-production.up.railway.app/pokemons/delete/${pokemonId}`);
       return dispatch({type: GET_POKEMON_DETAIL})
     } catch (error) {
       console.log("No puedo eliminar el pokemon", error);
@@ -107,7 +115,7 @@ export const updatePokemon = (pokemonId, payload) => {
     try {
       console.log(pokemonId);
       console.log(payload);
-      await axios.put(`http://localhost:3001/pokemons/edit/${pokemonId}`, payload);
+      await axios.put(`https://deployserver-production.up.railway.app/pokemons/edit/${pokemonId}`, payload);
       return dispatch({
         type: EDIT_POKEMON
       })
