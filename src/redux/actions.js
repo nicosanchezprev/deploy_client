@@ -26,9 +26,7 @@ export const setError = (payload) => {
 export const getTypes = () => {
   return async function(dispatch) {
     try {
-      await axios.get("https://deployserver-production.up.railway.app/types", {headers: {
-        "accept-encoding": "*",
-      }})
+      await axios.get("https://deployserver-production.up.railway.app/types")
     .then((info) => dispatch({ type: GET_TYPES, payload: info.data }));
     } catch (error){
       console.log(error);
@@ -39,9 +37,7 @@ export const getTypes = () => {
 export const getPokemons = () => {
   return async function(dispatch) {
     try {
-      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons", {headers: {
-        "accept-encoding": "*",
-      }});
+      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons");
       dispatch({ type: GET_POKEMONS, payload: json.data });
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -52,9 +48,7 @@ export const getPokemons = () => {
 export const getNamePokemons = (name) => {
   return async function(dispatch) {
     try {
-      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons?name=" + name.toLowerCase(), {headers: {
-        "accept-encoding": "*",
-      }});
+      var json = await axios.get("https://deployserver-production.up.railway.app/pokemons?name=" + name.toLowerCase());
       return dispatch({ type: GET_NAME_POKEMONS, payload: json.data});
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
@@ -65,9 +59,7 @@ export const getNamePokemons = (name) => {
 export const getPokemonDetail = (id) => {
   return async function (dispatch) {
     try {
-      await axios.get(`https://deployserver-production.up.railway.app/pokemons/${id}`, {headers: {
-        "accept-encoding": "*",
-      }})
+      await axios.get(`https://deployserver-production.up.railway.app/pokemons/${id}`)
       .then((info) => dispatch({ type: GET_POKEMON_DETAIL, payload: info.data }));
     } catch (error) {
       dispatch({type: ERROR, payload: error.message});
